@@ -1,0 +1,13 @@
+span.orange{
+  color: red;
+}
+ul>.orange{
+  color:blue
+}
+div>.orange{
+  color:orange
+}
+
+.orange ~ li {
+  color: skyblue
+}

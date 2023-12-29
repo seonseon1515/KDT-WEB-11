@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+
+    .orange1{
+      color: aqua;
+    }
+    .bgcolor{
+      background-color: yellow;
+      color:black
+      /* class를 두개 연달아 사용할 땐 더 뒤에 있는 게 우선순위 */
+    }
+    #orange{
+      /* font-size:글씨의 크기를 변경 */
+      font-size:50px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>사과</li>
+    <li>딸기</li>
+    <li id="orange" class="orange1">오렌지</li>
+  </ul>
+    <div class="orange1">당근</div>
+    <p class="bgcolor orange1 ">토마토</p>
+    <span>오렌지</span>
+</body>
+</html>
