@@ -1,0 +1,19 @@
+.main > div{
+  display:inline-block;
+  width:50px;
+  height: 50px;
+}
+.main{
+  /* margin:10px 20px 40px 60px; */
+  margin-top: 100px;
+  border:solid 2px #ff0000;
+  padding:20px 40px;
+}
+
+span{
+  display:block;
+}
+/* display: 레이아웃을 꾸밀 때 사용, 화면에 어떻게 요소들을 보여줄지 나타내는 것 */
+/* border는 테두리 선을 그리는 속성 */
+/* margin: 요소의 외부 여백을 지정 */
+/* padding: 요소의 내부 여백을 지정 */

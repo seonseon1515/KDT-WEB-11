@@ -1,0 +1,8 @@
+.text{
+  width:300px;
+  text-align:center;
+  text-decoration: overline;
+}
+/* text=align: 문자 정렬(왼쪽, 오른쪽, 가운데, 양쪽)
+
+text-decoration: 문자선(위, 아래, 가운데)*/

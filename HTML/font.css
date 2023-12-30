@@ -1,0 +1,23 @@
+
+/* 눈누 폰트는 웹폰트 가져오기 방식으로 폰트 가져옴 */
+@font-face {
+  font-family: 'JalnanGothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ * {
+  font-family: 'jalnanGothic';
+ }
+/* 구글 폰트는 링크 방식으로 폰트를 가져옴 */
+/* *{
+  font-family: 'Noto Sans KR', sans-serif;
+} */
+
+.content1{
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+}
