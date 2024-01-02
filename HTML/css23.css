@@ -1,0 +1,8 @@
+.opacity{
+  width:200px;
+  height: 200px;
+  background-color: yellow;
+}
+.opacity:hover{
+  opacity: 0;
+}

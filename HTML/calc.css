@@ -1,0 +1,17 @@
+body{
+  margin: 0px;
+  background-color: blueviolet;
+}
+
+.kdt{
+  background-color: blue;
+  width:calc(100vw/10);
+  height: calc(100vw/10);
+  color: white;
+  margin:auto;
+  text-align: center;
+  margin-top: calc(50vh - (100vw/20));
+  /* 50vw: 높이의 50% */
+  /* 100vw/20 전체 넓이의 5%-> 5vw(상단의 margin값) */
+  line-height: calc(100vw/10);
+}

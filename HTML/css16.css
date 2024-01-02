@@ -1,0 +1,10 @@
+.bgcolor{
+  background-color: aquamarine;
+  min-width:calc(1920px - 80%);
+  /* 반응형할 때 많이 쓰임, 다른 단위끼리 계산할 때 */
+  min-height: 800px;
+  /* 최소 800픽셀부터 시작 */
+}
+p{
+  line-height: 40px;
+}

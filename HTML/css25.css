@@ -1,0 +1,30 @@
+.parant{
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+.item1{
+  background-color: yellow;
+  position: relative;
+  top: 30px;
+  left: 50px;
+  width: 100px;
+  height: 80px;
+}
+.item2{
+  background-color: red;
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  bottom:100px;
+  right:30px;
+}
+.item3{
+  background-color: orange;
+  width: 100px;
+  height: 150px;
+  position: fixed;
+  right: 100px;
+  top: 100px;
+}

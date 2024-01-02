@@ -1,0 +1,13 @@
+div{
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+}
+.contentbox{
+box-sizing: content-box;
+}
+.borderbox{
+box-sizing: border-box;
+}

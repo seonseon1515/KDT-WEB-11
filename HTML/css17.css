@@ -1,0 +1,16 @@
+.bgcolor{
+  background-color: aquamarine;
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+
+}
+.square{
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  color: white;
+text-align: center;
+margin: calc(500px - 50%);
+box-height:50px;
+line-height: 50px;}
