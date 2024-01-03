@@ -1,0 +1,36 @@
+body{
+  background-color: cadetblue;
+  color: cornsilk;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+}
+.surbey:hover{
+  color: darkblue;
+  background-color: aqua;
+  
+}
+input{
+  background-color: aqua;
+}
+textarea{
+  background-color: aqua;
+}
+label{
+  color: black;
+  font-weight: bold;
+}
+[type="button"]:hover{
+  opacity: 0.5;
+}
+
+[placeholder]:hover{
+  opacity: 0.5;
+}
+h3{
+  background-color: cornflowerblue;
+}
+h3:hover{
+  color: darkblue;
+  background-color: aqua;
+  
+}

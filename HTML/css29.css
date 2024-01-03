@@ -1,0 +1,34 @@
+.grad{
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.grad-1{
+  background: linear-gradient(gray, tomato);
+
+}
+.grad-2{
+  background: linear-gradient(90deg, gray, tomato);
+  
+}
+.grad-3{
+  background: linear-gradient(90deg, gray,80%,tomato);
+  /* 색상 1의 비중 80% */
+}
+.grad-4{
+  background: linear-gradient(59deg,gray,tomato,yellow);
+}
+.grad-5{
+  background: linear-gradient(59deg,red,30%,orange,yellow,green,blue,navy,purple);
+}
+.grad-6{
+  background: linear-gradient(59deg,gray,tomato,yellow);
+}
+.grad-7{
+  background: linear-gradient(59deg,gray,tomato,yellow);
+}
+.grad-8{
+  background: linear-gradient(59deg,skyblue,aqua,aquamarine);
+  border-radius: 50%;
+}

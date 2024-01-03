@@ -1,0 +1,23 @@
+.main{
+  background-color: blue;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  /* row-reverse: 순서 방향을 기준으로 같음, 우측 정렬-> 헤더에 로그인, 로그아웃 만들 때 */
+}
+.box1{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.box2{
+  width: 150px;
+  height: 100px;
+  background-color: orange;
+}
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}

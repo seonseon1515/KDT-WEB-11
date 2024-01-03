@@ -1,0 +1,44 @@
+.main{
+  width: 100%;
+  height: 500px;
+  background-color: red;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* flex-direction: row-reverse; 
+  flex-wrap:wrap */
+}
+/* 찌그러짐 방지를 위해 다음줄로 넘어가게 하는 wrap사용 */
+/* flex-direction:x축과 y축의 시작축을 지정
+
+flex-wrap:줄바꿈 설정
+
+justify-content: 축의 정렬을 설정(flex-direction과 헷갈리지 말 것)
+
+align-items: 위 아래 축의 정렬을 설정 단, 한 줄일때!
+
+align-content: 위 아래 축의 정렬을 설정(단, 여러줄일 때)*/
+
+
+.item{
+  width: 100px;
+  height: 100px;
+}
+.item1{
+  background-color: orange;
+}
+.item2{
+  background-color: yellowgreen;
+}
+.item3{
+  background-color: skyblue;
+}
+.item4{
+  background-color: blue;
+}
+.item5{
+  background-color: purple;
+}
+.item6{
+  background-color: plum;
+}

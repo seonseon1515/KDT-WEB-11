@@ -1,0 +1,32 @@
+.container{
+  background-color: black;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+.item{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.item1{
+  background-color: red;
+  
+  z-index: 3;
+  /* z-index:1(132순서) */
+}
+.item2{
+  background-color: yellow;
+  top: 30px;
+  left: 30px;
+  z-index: 4;
+  /* z-index:-1(132순서) */
+}
+
+.item3{
+  background-color: blanchedalmond;
+  top: 60px;
+  left: 60px;
+  z-index: 5;
+  /* z-index:0(132순서) */
+}

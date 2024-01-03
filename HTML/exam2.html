@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>설문조사</title>
+  <link rel="stylesheet" href="exam2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@700&family=Teko:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h3>설문조사</h3>
+  <h3 class="surbey">설문조사</h3>
   <!--label태그 : input에 라벨을 달아주는 태그-->
   <!--for을 쓰면 id를 쓸 수 있음(id는 딱 하나 나와야 됨)-->
   <label for="name">이름</label><input type="text" placeholder="이름" id="name/></br>
   <label for="email">이메일</label>
   <input type="email" placeholder="aaa@gmail.com" id="email"/></br>
   <h3>나이</h3>  
-  <input type="number"
+  <input type="number">
   <input type="radio" name="age" id="ten"/><label for="ten">10대</label>   
   <input type="radio" id="tw"/><label for="tw">20대</label> 
   <input type="radio" id="th"/><label for="th">30대</label> 
@@ -21,6 +23,7 @@
   <input type="radio" id="f"/><label for="f">50대</label> 
   <input type="radio" id="s"/><label for="s">60대 이상</label> </br>
 
+  <h3>원하는 강의(복수응답가능합니다.)</h3>
   <input type="checkbox" name="class" id="html"><label for="html">html</label>
   <input type="checkbox" name="class"><label for="javascript">javascript</label>
   <input type="checkbox" name="class"><label for="css">css</label>
