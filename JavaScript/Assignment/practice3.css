@@ -1,0 +1,19 @@
+p{
+  animation-name: sentence;
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  position: absolute;
+}
+
+@keyframes sentence{
+  from{
+    left: 100%;
+    width: 300%;
+  }
+  to{
+    left: 0%;
+    width: 100%;
+  }
+}

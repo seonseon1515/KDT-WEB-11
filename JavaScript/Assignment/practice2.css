@@ -1,0 +1,15 @@
+div{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  color: white;
+  overflow: scroll;
+}
+div:hover{
+  width: 300px;
+  height: 300px;
+
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+  transition-timing-function: linear
+}
