@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script defer src="dom1.js"></script> -->
+
+  <!--일반적으로는 defer를 쓰지 않고 아래에 씀-->
+
+  <!--defer: 해당 스크립트를 body를 읽고 난 후 코드 실행-->
+  <style>
+    .title{
+      color: blue;
+      font-size: 20px;
+    }
+    .titleBig{
+      font-size: 50px;
+
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="text" class="titleBig">
+   
+  </div>
+  <a id="link">링크</a>
+  <img id="img"/>
+  <input type="text" id="input"/>
+
+
+
+
+
+  
+  <script src="dom1.js"></script>
+
+</body>
+</html>
+<!-- 읽어지는 순서가 중요! 
+검사 -> 네트워크에서 슬로우모드로 해서 읽어지는 순서를 파악할 수 있음 -->
