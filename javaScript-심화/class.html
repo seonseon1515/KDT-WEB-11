@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // class
+            class Cat {
+                // 생성자: 클래스의 인스턴스 생성시 생성되는 것 (선택)
+                constructor(name, age) {
+                    // 속성(변수)
+                    this.name = name;
+                    this.age = age;
+                }
+
+                // 메소드
+                mew() {
+                    console.log(this.name, '야애용애용애용');
+                }
+                eat() {
+                    console.log(this.age, '먹는다욤욤욤');
+                }
+            }
+
+            const cat1 = new Cat('나비', 1);
+            const cat2 = new Cat('냥이', 2);
+            const cat3 = new Cat('선경', 26);
+            cat1.mew();
+            cat1.eat();
+            cat2.mew();
+            cat3.eat();
+
+            // 상속
+            class House {
+                door() {
+                    console.log('문을 여닫습니다. 쾅코아옼왕');
+                }
+                window() {
+                    console.log('창문을 여닫습니다.');
+                }
+            }
+
+            const House1 = new House();
+            House1.door();
+
+            class Apartment extends House {
+                elevator() {
+                    console.log('승강기를 타고 내립니다.');
+                }
+            }
+
+            const Apartment1 = new Apartment();
+            Apartment1.window();
+
+            // shape 클래스 만들기 실습
+
+            class Shape {
+                constructor(width1, height1) {
+                    this.width1 = width1;
+                    this.height1 = height1; // this.height1에 height1을 할당?
+                }
+
+                getArea() {
+                    return this.width1 * this.height1;
+                }
+            }
+
+            let rec1 = new Shape(3, 4);
+            console.log(rec1.getArea());
+
+        </script>
+    </body>
+</html>
