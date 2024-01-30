@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // function add(a1,n2, cb){
+            //   setTimeout(()=>{
+            //     let result = n1 + n2;
+            //     cb(result);
+            //   },1000)
+            // }
+
+            // function mul(n,cb){
+            //   setTimeout(()=>{
+            //     let result= n *2;
+            //     cb(result)
+            //   },700);
+            // }
+
+            // function sub(n,cb){
+            //   setTimeout(()=>{
+            //     let result = n-1;
+            //     cb(result);
+            //   },500);
+            // }
+
+            // add(4,3,function(x){
+            //   console.log('1: ',x)
+            //   mul(x, function(y){
+            //     console.log('z: ',y)
+            //   sub(y,function(z){
+            //     console.log('3:', z)
+            //     })
+            //   })
+            // });
+
+            //promise
+            function add(n1, n2) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                      let result = n1+ n2;
+                        resolve(result);
+                    }, 1000);
+                });
+            }
+
+            function mul(n) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let result = n * 2;
+                        resolve(result);
+                    }, 700);
+                });
+            }
+
+            function sub(n) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let result = n - 1;
+                        resolve(result);
+                    }, 500);
+                });
+            }
+
+            // 출력을 위해 매개변수를 만들어줌
+            add(4, 3)
+                .then((responds) => {
+                    console.log('add: ', responds);
+                    return mul(responds);
+                })
+                .then((responds1) => {
+                    console.log('mul: ', responds1);
+                    return sub(responds1);
+                })
+                .then((responds) => {
+                    console.log('sub: ', responds);
+                });
+
+                // 실습
+                function call(name, cb){
+                  return new Promise((resolve, reject)=>{
+                    setTimeout(()=>{
+                        console.log(name);
+                        console.log(name + '반가워');
+                      resolve()}
+                        ,1000)}
+                  )}
+
+                  function back(cb){
+                  return new Promise((resolve, reject)=>{
+                    setTimeout((txt)=>{
+                        console.log(txt);
+                        console.log(txt + '을 실행했구나');
+                      resolve()}
+                        ,1000);}
+                  )}
+
+                  function hell(cb){
+                  return new Promise((resolve, reject)=>{
+                    setTimeout((message)=>{
+                        console.log('여기는' + message);
+                      resolve()}
+                        ,1000);}
+                  )}
+
+                  call('NaSeonKyung')
+                  .then(()=>{
+                    console.log('call: ', call());
+                    return back('txt')
+                  })
+                  .then(()=>{
+                    console.log('back: ',back());
+                    return hell('message');
+                  })
+                  .then(()=>{
+                    console.log('hell: ', hell());
+                  })
+        </script>
+    </body>
+</html>
