@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // spread 연산자
+            const a = [1, 2, 3];
+            const b = [4, 5];
+
+            // 함수 방식
+            const concat = a.concat(b);
+            console.log('concat', concat);
+
+            //spread 방식 -> 배열을 합치는 데 주로 사용
+            const spread = [...a, ...b];
+            console.log('spread', spread);
+
+            const obj = {
+                name: '나선걍',
+                age: 18,
+            };
+
+            // 같은 결과 다른 표현
+            console.log({ ...obj });
+            console.log(obj);
+
+            const str = 'hello';
+            console.log([...str], ...str);
+
+            // rest
+            function get(a, b, c, ...rest) {
+                console.log(a, b, c, rest);
+            }
+            const arr = [1, 2, 3, 4, 5];
+            get(...arr); // 배열이 들어간게 아니라 숫자가 들어감
+            get(arr);
+
+            // 실습
+            const word1 = 'abc';
+            const word2 = 'xyz';
+
+            console.log([...word1, ...word2]);
+        </script>
+    </body>
+</html>
