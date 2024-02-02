@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>객체의 구조 분해 할당</h3>
+        <script>
+            const skObject = {
+                name: 'seonkyung',
+                age: 26,
+                hobby: 'singing',
+                // color: "pink"
+            };
+
+            const { name, age, hobby } = skObject;
+            console.log(skObject);
+            console.log(skObject.name);
+            console.log(skObject.age);
+            console.log(skObject.hobby);
+
+            let obj = {
+                key1: 'one',
+                key2: 'two'
+            };
+
+            let { key1: newkey1, key2, key3 = 'three' } = obj;
+            console.log(obj);
+            console.log(obj.key1);
+            console.log(obj.key2);
+            console.log(obj.newkey1);
+            console.log(obj.key3);
+        </script>
+    </body>
+</html>

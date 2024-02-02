@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>promise를 이해해보자</h3>
+
+        <script>
+            function promise_understand(flag) {
+                return new Promise(function (resol, rej) {
+                    if (flag) {
+                        resol('flag가 true이므로 결과, value 호출, then으로 연결됨');
+                    } else {
+                        rej(`flag가 false이므로 rejected, catch로 연결`);
+                    }
+                });
+            }
+
+            // promise 객체 사용법
+            promise_understand(true)
+                .then(function (result) {
+                    console.log(result);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            //promise를 이용한 동기처리
+            function goMart() {
+                console.log('마트 입장!');
+            }
+
+            function pickSnack() {
+                return new Promise(function (success, fail) {
+                    setTimeout(function () {
+                        console.log('초코 과자? 딸기 과자?');
+                        product = 'choco';
+                        price = 2000;
+                        success();
+                    }, 2000);
+                });
+            }
+            // 매개변수가 같으면 함수의 이름이 다르더라도 찾아 사용하는 듯 하지만 가독성을 위해 굳이 다르게 사용할 필욘 없는 것 같다.
+
+            function pay(product, price) {
+                console.log(`상품: ${product}, 가격: ${price}`);
+                console.log(`계산 완료`);
+            }
+
+            let product;
+            let price;
+            goMart();
+            pickSnack().then(pay);
+
+            // 왜 결과 undefined?
+        </script>
+    </body>
+</html>
