@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <!-- <h1>FORM 싱글 연습</h1>
+  // 단순폼만들기이기 때문에 action이 있어야 함
+  // 파일 업로드는 post 방식
+  // 잘 안쓰는 방식
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="userfile"/> </br>
+    <input type="text" name="title"/></br>
+    <button type="submit"> 업로드</button>
+    // 왜 웹페이지 콘솔에는 안뜨고 vs code 콘솔에는 뜨는지?
+  </form> -->
+
+   <!-- <h1>FORM 멀티 연습(ver1)</h1>
+  <form action="/upload/array" method="post" enctype="multipart/form-data">
+      <input type="file" name="userfiles"  multiple></br>
+      <input type="text" name="title"></br>
+      <button type="submit"> 업로드</button>
+  </form> -->
+  <!-- 왜 하나만 선택되는지?-->
+
+
+  // 한번씩 여러개 
+    <!-- <h1>FORM 멀티 연습(ver2)</h1>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+      <input type="file" name = "userfile1" /></br>
+      <input type="text" name = "title1"/></br>
+      <input type="file" name = "userfile2"/></br>
+      <input type="text" name= "title2"> </br>
+      <button type="submit"> 업로드</button>
+    </form> -->
+
+    <h1>동적 파일 업로드</h1>
+    <form>
+      
+      <input type="file" id="userfile"/></br>
+      <input type="text" id="title"></br>
+      <button type="button" onclick="fileUpload()">업로드</button>
+    </form>
+  </br>
+  </br>
+  </br>
+  <div class="resultBox" style="background-color: orangered;"></div>
+  <script>
+    const resultBox = document.querySelector('.resultBox');
+      function fileUpload(){
+        const file = document.querySelector('#userfile');
+        console.log(file.files[0]);
+        // files가 뭔데?? -> 파일 접근을 위해 file.files를 사용하고 
+        //file.files는 배열을 반환하며 우리가 원하는 것은 첫번째 요소이기 때문에 file.files[0]을 사용함
+
+        //formData: js 내장 객체, 폼 데이터를 생성해줌.
+        const formData1 = new FormData();
+        // append 메소드를 이용 => append (key, vlaue) => 백엔드로 보낼 키값임
+        formData1.append('title', document.querySelector('#title').value)
+        formData1.append('giveYouFile',file.files[0]);
+      }
+      // 파일들은 항상 제일 마지막에 선언
+
+      axios({
+  method:'post',
+  url: '/uplaod/axios',
+  data: formData1,
+  headers:{
+    'Content-Type': 'multipart/form-data', 
+  }
+}).then((res)=>{
+    console.log('res: ', res);
+    resultBox.innerHTML = `<p>이름은 ${res.data.title.title}</p><img src=${res.data.file.path}>`
+})
+  </script>
+</body>
+</html>

@@ -24,7 +24,7 @@ app.get('/gugu', (req, res) => {
 });
 
 app.get('/fruit', (req, res) => {
-    res.render('fruit', {
+    res.render('fruits', {
         fruit: [
             { name: 'apple', kor: '사과' },
             { name: 'banana', kor: '바나나' },

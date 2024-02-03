@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+            }
+            div:hover {
+                cursor: pointer;
+            }
+            .red {
+                background-color: red;
+            }
+            .orange {
+                background-color: orange;
+            }
+            .yellow {
+                background-color: yellow;
+            }
+            .green {
+                background-color: green;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .purple {
+                background-color: purple;
+            }
+        </style>
+        <script>
+            let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+
+            function colorch(){
+              for(let i=0; i<colors.length; i++)
+                  return colors[i]
+            }
+            function changeColor() {
+                $('.red').switchClass('red',colorch(),1000);
+            }
+
+          </script>
+    </head>
+    <body>
+        <div class="red" onclick="changeColor();"></div>
+    </body>
+</html>

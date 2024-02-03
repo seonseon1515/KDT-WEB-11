@@ -1,0 +1,22 @@
+.parent {
+  background-color: aqua;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  background-color: black;
+  margin: 10px;
+}
+
+/* 미디어 쿼리는 기준점 코드를 다 작성하고 마지막인 밑에 써야함 */
+/* 최소 500px부터 최대 700px까지 */
+@media screen and( min-width:500px) and(max-width:700px) {
+  .parent {
+      display: flex;
+      flex-direction: row;
+  }
+  .child {
+      background-color: blue;
+  }}

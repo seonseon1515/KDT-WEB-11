@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<hr lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <!-- cdn 형태로 가져오는 것-->
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+</head>
+<br>
+
+  <div id="hello">안녕하세요</div>
+  <h4>val()</h4>
+  <input type = 'text'>
+  <button type="button" onclick="getValue()">값 가져오기</button>
+  
+  <button type="button" onclick="setValue()">값 설정하기</button>
+
+  <hr>
+  <h4>CSS()</h4>
+  <span>안녕</span>
+</br>
+
+<button type="button" onclick="chanegeCssJs()">js로 바꾸기</button>
+<button type="button" onclick="changeCssJquery()">jQuery로 바꾸기</button>
+<button type="button" onclick="getCssJquery()">jQuery로  CSS 가져오기</button>
+
+<hr>
+<h4>attr()</h4>
+<a href="https://www.google.com">이동하기</a>
+<br>
+<button type="button" onclick="changeAttrJs()">js로 바꾸기</button>
+<button type="button" onclick="changeAttrJq()">jq로 바꾸기</button>
+
+<hr>
+<h4>html()</h4>
+<div class="html">안녕하세요</div>
+<button type="button" onclick="changeHtmlJs()">
+  js로 바꾸기
+</button>
+<button type="button" onclick="changeHtmlJq()">jq로 바꾸기</button>
+
+<hr>
+<h4>요소 추가하기</h4>
+<ul class="colors">
+  <li class="orange">orange</li>
+  <li class="green">green</li>
+  <li class="gray">gray</li>
+</ul>
+<h5>append() - 선택된 요소의 자식 중 마지막에 추가</h5>
+<button type = "button" onclick="appendJs()">js로 바꾸기</button><button type = "button" onclick = "appendJq()">Jq로 바꾸기</button>
+
+<h5> prepend() - 선택된 요소의 자식 중 처음에 추가</h5>
+<button type = "button" onclick="prependJs()">js로 바꾸기</button><button type = "button" onclick = "prependJq()">Jq로 바꾸기</button>
+
+
+
+<hr>
+<h4> 요소 삭제하기 </h4>
+<ul class="nums">
+  <li>1</li>
+  <li id = "li2">2</li>
+  <li>3</li>
+</ul>
+<h5> remove() - 선택한 요소 삭제</h5>
+<button type="button" onclick="removeJs()"> js로 바꾸기</button>
+<button type="button" onclick="removeJq()"> jq로 바꾸기</button>
+  
+
+<h5>empty() - 선택한 요소 자식 모두 삭제(제이쿼리)</h5>
+<button type="button" onclick="emptyJs()"> js로 바꾸기</button>
+<button type="button" onclick="emptyJq()"> jq로 바꾸기</button>
+
+<hr>
+<h4>요소 탐색하기</h4>
+<div class="ancestor">조상
+  <div class="parent">부모
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+</div>
+
+  <button type ="button" onclick="findParent()">부모 찾기</button>
+
+   <button type="button" onclick="findParants()">조상 찾기</button>
+
+   <button type="button" onclick="findNext()">형제 찾기</button>
+
+   <button type="button" onclick="findPrev()">이전 형제 찾기</button>
+
+   <button type="button" onclick="findChildren()">모든자식찾기</button>
+
+
+
+
+<script src="jQuery.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+  .grid{
+
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 70px;
+  }
+  .main{
+    display: flex;
+    justify-content: space-between
+  }
+.inputs{
+  width:300px;
+  height: 300px;
+  background-color: orangered;
+  
+}
+.calender{
+  margin-top: 70px;
+   width: 50vw;
+   height: 70vh;
+   background-color: aqua;
+   
+
+}
+</style>
+<body>
+  <hr>
+  <form class="main">
+    <div class="inputs">
+      날짜: <input type="text" name="" class="date"></br>
+      내용: <input type="text" name='' class="contents"></br>
+      <button type="button">작성</button>
+    </div>
+    <div class="parent2">
+
+      <div class="grid dateHead">
+        <div class=" standard1">일</div>
+        <div class=" standard2">월</div>
+        <div class=" standard3">화</div>
+        <div class=" standard4">수</div>
+        <div class=" standard5">목</div>
+        <div class=" standard6">금</div>
+        <div class=" standard7">토</div>
+      </div>
+  
+      <div class="grid dateBoard"></div>
+    </div>
+  </form>
+  <script src="calender.js"></script>
+</body>
+</html>
