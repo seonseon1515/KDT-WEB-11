@@ -39,7 +39,7 @@ const uplaodDetail = multer({
         },
     }),
     // limits: 파일 저장 용량 제한(옵션)
-    limits: { fileSize: 5 * 1024 * 1024 }, //5mb(메가바이트)제한
+    // const limits: { fileSize: 5 * 1024 * 1024 }, //5mb(메가바이트)제한
 });
 
 // 페이지 router
