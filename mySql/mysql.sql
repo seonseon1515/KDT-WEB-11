@@ -153,16 +153,97 @@ select * from practice1 order by birthday asc;
 -- 2번
 select * from practice1 where gender='M' order by name DESC;
 -- 3번
-select id, name from practice1 where 1900 <= birthday <2000;
+select id, name from practice1 where 1990 <= birthday <2000;
+select id, name from practice1 where birthday LIKE '199%'
 -- 4번 
 select * from practice1 where month(birthday)='06' order by birthday ASC;
+select * from practice1 where birthday LIKE '%-06-%'
 -- 5번
 select * from practice1 where gender='M'AND YEAR(birthday)="1970";
+select* from practice1 where gender= 'M' AND birthday LIKE '197%';
 -- 6번
 select * from practice1 order by age DESC limit 3;
 -- 7번
 select * from practice1 where 25<= age <= 50;
 -- 8번
 update practice1 set pw=12345678 where id = 'nana1234';
+-- update 실행 후 직접 실행시켜서 결과 보기(select랑은 다름)
 -- 9번
 delete from practice1 where id = 'nana1234';
+
+
+
+-- ------------------------- INNER JOIN ---------------------------------
+use kdt;
+
+create table customer(
+id varchar(10) not null primary key,
+name varchar(10) not null,
+birthday date not null
+);
+
+insert into customer (id, name , birthday) VALUES 
+('aaa', '나선경', '1999-10-15'),
+('bbb', '최하루', '1998-03-12'),
+('ccc' ,'남현경', '1997-04-05');
+
+create table orderList(
+	id int auto_increment primary key not null,
+    customer_id varchar(10) not null,
+    -- primary 키 아님 외래키로 쓸 것임
+    product_name varchar(20) not null,
+    quantity int,
+    -- 외래키로 연결해서 쓰는 것이 일반적
+    -- orderList에게 외래키를 알려주기(+ 외래키 제약 조건을 추가할 수 있음 ex) ON delete cascade)
+    foreign key(customer_id) references customer(id) 
+);
+
+insert into orderList (customer_id , product_name, quantity ) VALUES 
+('aaa' , '맥북 프로', 380),
+('bbb', '모니터',34390),
+('ccc' , '아이패드', 327423),
+('bbb', '마우스',3),
+('ccc' , '짱구', 323);
+select customer.id as order_id, customer.name, orderList.product_name from customer 
+inner join orderList on customer.id = orderList.customer_id 
+where orderList.quantity >5; 
+-- 기준이 되는 테이블이 customer 
+
+select a.id as order_id, a.name, b.product_name from customer as a
+inner join orderList as b on a.id = b.customer_id 
+where b.quantity >1;
+
+create table departments(
+	departments_id int primary key,
+    departments_name varchar(255) not null
+);
+
+drop table employees;
+
+create table employees(
+	employees_id int primary key,
+    username varchar(31) not null,
+    departments_id int,
+    foreign key (departments_id) references departments(departments_id)
+);
+
+insert into departments (departments_id, departments_name) VALUES
+(1,'기획팀'),
+(2, 'IT개발팀'),
+(3, '디자인팀');
+
+insert into employees (employees_id, username, departments_id) VALUES
+(1, '홍길동',2),
+(2, '성춘향',3),
+(3, '이몽룡',NULL),
+(4, '임꺽정',2),
+(5, '황진이',3);
+
+select a.employees_id , a.username, b.departments_name 
+from employees as a left join departments as b
+on a.departments_id = b.departments_id ;
+-- inner join은 양쪽에 둘 다 있는 데이터만 가져옴
+
+select * from employees as a left join departments as b
+on a.departments_id = b.departments_id 
+
