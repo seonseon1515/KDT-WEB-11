@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>js의 비동기 처리를 마트 에시로 이해해보자</h3>
+
+  <script>
+   
+
+    function goMart(){
+      console.log('마트 입장!');
+    }
+
+    function pickSnack(){
+      setTimeout(function(){
+        console.log('초코 과자? 딸기 과자?');
+        product =  'choco';
+        price = 2000;
+      }, 2000);
+    }
+
+    function pay (product, price) {
+      console.log(`상품: ${product}, 가격: ${price}`);
+      console.log(`계산 완료`);
+    }
+
+  
+    let product;
+    let price;
+    goMart();
+    pickSnack(); // 2초 후 결과 나타남
+    pay(product, price); // 위 함수 코드에서 변수 할당을 기다리지 않아 undefined가 뜸
+
+  </script>
+</body>
+</html>

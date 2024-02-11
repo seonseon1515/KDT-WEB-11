@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>배열 구조 분해 할당</h3>
+
+        <script>
+            let lists = ['apple', 'grape'];
+            [item1, item2, item3 = 'peach'] = lists;
+
+            console.log('item1: ', item1); // apple
+            console.log('item2: ', item2); // grape
+            console.log('item3: ', item3); // peach
+
+            // 배열 값의 자리를 바꿀 수 있음, 배열에 배열을 할당 가능, 배열에 선언된 변수를 넣을 수 있음
+            let x = 1,
+                y = 3;
+            [x, y] = [y, x];
+
+            console.log('x: ', x);
+            console.log('y: ', y);
+        </script>
+    </body>
+</html>

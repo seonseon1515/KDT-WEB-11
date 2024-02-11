@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>callback 함수를 이해해보자!</h3>
+
+        <script>
+            function mainFunc(p1, p2, lastCallBack) {
+                lastCallBack();
+                // 마지막 콜백함수를 실행하기 위한 메인함수 작성
+            }
+
+            function anyFunc(p1) {
+                console.log('콜백함수');
+            }
+
+            mainFunc(1, 2, anyFunc);
+
+            // 비동기 처리방식으로 작동하는 goMart logic을 리팩토링해보자!
+
+            function goMart() {
+                console.log('마트 입장!');
+            }
+
+            function pickSnack(pick) {
+                setTimeout(function () {
+                    console.log('초코 과자? 딸기 과자?');
+                    product = 'choco';
+                    price = 2000;
+                    pick(product, price);
+                }, 2000);
+            }
+            // 매개변수가 같으면 함수의 이름이 다르더라도 찾아 사용하는 듯 하지만 가독성을 위해 굳이 다르게 사용할 필욘 없는 것 같다.
+
+            function pay(product, price) {
+                console.log(`상품: ${product}, 가격: ${price}`);
+                console.log(`계산 완료`);
+            }
+
+            let product;
+            let price;
+            goMart();
+            pickSnack(pay);
+        </script>
+    </body>
+</html>
