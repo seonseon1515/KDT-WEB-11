@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function call(name, cb) {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        console.log(name);
+                        console.log(name + '아 반가와');
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            function back(cb) {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        console.log('back');
+                        console.log('back을 실행햇구나');
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            function hell(cb) {
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        console.log('여기는 callback hell');
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            // 프로미스 함수 표현법에는 어떤 원리가 담겼는지 알고 싶음
+            // 왜 이렇게 쓰는지 모르는 채로, 아 이런가보다 하면서 쓰는건 너무 남들과 차별성이 없음
+
+            call('나선경').then(back).then(hell);
+        </script>
+    </body>
+</html>
