@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>get 폼 만들기 실습</h1>
+        <form action="/getform" method="get" name="axiosForm">
+            <p>ID<input type="id" name="id" placeholder="id" /></p>
+            <p>PW<input type="password" name="pw" placeholder="pw" /></p>
+            <p>좋아하는 색상<input type="color" name="color" placeholder="좋아하는 색상" /></p>
+            <button type="button" onclick="axiosGet()">axios get 제출</button> 
+            <!-- 타입 submit 지정하면 폼의 정보가 백엔드로 전달됨 -->
+        </form>
+
+      </hr>
+      <h1>post 폼 만들기 실습</h1>
+        <form action="/postform" method="post" name="axiosPostForm">
+            <p>ID<input type="id" name="id" placeholder="id" /></p>
+            <p>PW<input type="password" name="pw" placeholder="pw" /></p>
+            <p>좋아하는 색상<input type="color" name="color" placeholder="좋아하는 색상" /></p>
+            <button type="button" onclick="axiosPost()">axios post 제출</button>
+            <div id="result"></div>
+        </form>
+    </body>
+    
+    <script>
+      const resultBox =  document.querySelector('#result');
+    function axiosGet(){
+      const axiosGetForm = document.forms['axiosForm'];
+      const data = {id:axiosGetForm.id.value , pw:axiosGetForm.pw.value};
+    
+    axios({
+      method: 'get',
+      url:'/getform',
+      params:data,
+    }).then((res)=>{
+     console.log(res);
+     resultBox.textContent = `나선경님 id는 ${data.id} pw는 ${data.pw}입니다!`
+    })
+  }
+  const resultBoxPost = document.querySelector('#result');
+  function axiosPost(){
+    const form = document.forms['axiosPostForm']
+    const data = {id:form.id.value , pw: form.pw.value};
+  
+    axios({
+      method:'post',
+      url:'/postform',
+      data
+    }).then((res)=>{
+      console.log(res);
+      resultBoxPost.textContent = `나선경님 id는 ${data.id} pw는 ${data.pw}입니당`
+    })
+  }
+
+    </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <div id="resultBox">아이디 <%= userInfo.id %></div>
+        <div>비밀번호 <%= userInfo.pw %></div>
+
+        <script>
+            // 객체 구조 분해할당 활용법 더 공부하기, userInfo 라는 객체에 id,pw값을 넣고 싶은데 어떻게 하지?
+            // const userInfo = {
+            //     id: req.body.id,
+            //     pw: req.body.pw,
+            // };
+
+            // 콘솔에 userInfo객체를 띄워서 구조를 보는 방법???
+            // console.log(userInfo);
+
+            
+            axios({
+
+            })
+        </script>
+    </body>
+</html>
