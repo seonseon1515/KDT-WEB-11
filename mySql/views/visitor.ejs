@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>방명록</h1>
+  <form name=visitor-form>
+    <fieldset>
+      <legend>방명록 등록</legend>
+      <input type="text" id="name" placeholder="방문자 이름"></br>
+      <input type="text" id="comment" placeholder="방명록"></br>
+  <button type ="submit">등록</button>
+  
+  
+    </fieldset>
+
+    <script>
+      // 방명록 즉시 실행
+      // 페이지가 열리면서 즉시 실행하게 함
+      
+      (async function (){
+        const res = axios({
+          method:'get',
+          url:'/api/visitor'
+        })
+        console.log(res)
+      })() 
+  
+      //document.ready랑 같은 역할
+    </script>
+
+    
+  </form>
+</body>
+</html>

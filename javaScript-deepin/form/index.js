@@ -26,18 +26,16 @@ app.get('/', (req, res) => {
 app.get('/getForm', (req, res) => {
     //get 방식일 때 data?를 받는 방법
     console.log('req.query');
-
-    res.render('result.ejs', { tilte: 'GET요청 결과', userInfo: req.query });
+    res.render('result.ejs', { title: 'GET요청 결과', userInfo: req.query });
     // 랜더링
-    //프론트로 객체를 보내는 과정
+    //프론트로 객체를 보내는 과정(res.send는 안되나?) 이거 콘솔창에 뜨는거였나?
 });
 
-// 라우터랑 url이랑 다름 
+// 라우터랑 url이랑 다름
 app.post('/postForm', (req, res) => {
     //get 방식일 때 data?를 받는 방법
     console.log('req.body');
-
-    res.render('result.ejs', { tilte: 'psot요청 결과', userInfo: req.body });
+    res.render('result.ejs', { title: 'psot요청 결과', userInfo: req.body });
     // 랜더링
     //프론트로 객체를 보내는 과정
 });

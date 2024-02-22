@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <button type="button" id="hello" onclick="hello()" value="hello">hello</button>
+        <button type="button" id="study" onclick="study()" value="study">study</button>
+        <button type="button" id="bye" onclick="bye()" value="bye">bye</button>
+        <p id="form-data"></p>
+        <script>
+            const socket = io();
+            const p = document.querySelector('#form-data');
+            const helloButton = document.querySelector('#hello');
+            const studyButton = document.querySelector('#study');
+            const byeButton = document.querySelector('#bye');
+
+            function hello() {
+                socket.emit('open_message', { name: 'client', message: 'hello' }); // 서버로 보내는 것
+                socket.on('returnHello', (arg) => {
+                    p.textContent = `${arg.name} : ${arg.message}`;
+                });
+            }
+
+            function study() {
+                socket.emit('open_message', { name: 'client', message: 'study' });
+                socket.on(rtStudy, (arg) => {
+                    p.textContent = `${arg.name} : ${arg.message}`;
+                });
+            }
+
+            function bye() {
+                socket.emit('open_message', { name: 'client', message: 'bye' });
+                socket.on(rtBye, (arg) => {
+                    p.textContent = `${arg.name} : ${arg.message}`;
+                });
+            }
+        </script>
+    </body>
+</html>

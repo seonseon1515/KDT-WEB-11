@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h3>rest 파라미터</h3>
+        <script>
+            const sk = [...'seonkyung'];
+            console.log(sk);
+
+            function seonGet(s,e,o,n, ...rest) {
+                console.log(rest);
+            }
+
+            seonGet(...sk);
+        </script>
+    </body>
+</html>

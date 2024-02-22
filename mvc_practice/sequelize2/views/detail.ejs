@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>상세 페이지</h1>
+<form name="postForm">
+  <input type="text" id="title" placeholder="제목"></br>
+  <textarea id="content" cols="30" rows="10"></textarea>
+  <input type="hidden" id="index">
+  <button type="button" onclick="updateFunc()">수정</button>
+  <button type="button" onclick="deleteFunc()">삭제</button>
+</form>
+
+<script>
+  const [_, url] = document.location.href.split('post/')
+  (async function(){
+    const res = await axios({
+      method:'get',
+      url: `api/post/${url}`,
+    })
+
+    console.log(res);
+    const {id, title, content} = res.data.data;
+    document.querySelector('#title').value = title;
+    document.querySelector('#content').value = content;
+    document.querySelector('#index').value = id;
+  })
+
+  async function undateFunc(){
+    const form =document.forms['post-form']
+    await axios({
+      method:'patch',
+      url: '/api/post/update',
+      data:{
+        id:form.index.value,
+        title:form.title.value,
+        content:form.content.value,
+      }
+    })
+    console.log('res',res);
+    if(res.data.result){
+      document.location.reload()
+    }
+
+    async function deleteFunc(){
+      if(!confitm)('삭제하시겠습니까?'){
+        return;
+      } 
+      await axios({
+      method:'patch',
+      url: '/api/post/update',
+      data:{
+        id:document.querySelector('#index').value
+        title:form.title.value,
+        content:form.content.value,
+      }
+    })
+    }
+
+</script>
+</body>
+</html>
