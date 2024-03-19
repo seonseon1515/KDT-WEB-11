@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import SyntheticEvent from './SyntheticEvent';
+import ClassBind from './ClassBind';
+import Counter from './Counter';
+import HendlerEx from './Components/Ex/HendlerEx.js'
+import HendlerEx2 from './Components/Ex/HendlerEx2.js';
+import HandlerEx3 from './Components/Ex/HandlerEx3.js';
+import HandlerEx4_1 from './Components/Ex/HandlerEx4_1.js';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SyntheticEvent />
+
+      <hr />
+      <ClassBind />
+
+      <hr />
+      <Counter />
+
+      <hr />
+      <HendlerEx />
+
+      <hr />
+      <HendlerEx2 />
+
+      <hr />
+      <HandlerEx3 />
+
+      <hr />
+      <HandlerEx4_1 />
+
     </div>
   );
 }
