@@ -1,0 +1,54 @@
+$pink-color: pink;
+$yellow-color: yellow;
+$green-color: green;
+
+@mixin clock1($name, $direction) {
+  @keyframes #{$name} {
+    0% {
+      left: $direction;
+    }
+
+    25% {
+      left: $direction * 3;
+    }
+
+    50% {
+      left: $direction * 3;
+      top: $direction;
+    }
+    75% {
+      left: $direction * 2;
+      top: $direction * 2;
+    }
+    100% {
+      left: $direction;
+      top: $direction * 1;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  // margin-top: 100px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+
+  &.top {
+    background-color: $pink-color;
+    animation: pinkCir 2s linear infinite;
+    @include clock1(pinkCir, 10px);
+  }
+
+  &.middle {
+    background-color: $yellow-color;
+    animation: yellowCir 2s linear infinite;
+    @include clock1(yellowCir, 20px);
+  }
+
+  &.bottom {
+    background-color: $green-color;
+    animation: greenCir 2s linear infinite;
+    @include clock1(greenCir, 30px);
+  }
+}

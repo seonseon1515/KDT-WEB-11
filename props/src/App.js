@@ -17,10 +17,13 @@ function App() {
   // 정보를 통으로 넘겨주는 방법(객체 안에 속성 다 넣기)
   return (
     <div className="App">
+      {/* 값에 접근할 수 있는 키 값의 네이밍은 원하는 대로 가능하다! */}
       <FunctionComponent name={name} time="2시" />
       <FunctionComponent time="2시" />
       {/* 부모 속성을 자식에게! */}
+      {/* 태그 사이에 작성한 글은 자식 컴포넌트에서 children으로 사용가능하다. */}
       <FunctionComponent time="2시">자식 내용</FunctionComponent>
+      {/* 중괄호로 감싸서 배열을 전해줄 수 있다. */}
       <FunctionComponent name={[1, 2, 3]} time="14시"></FunctionComponent>
       {/* <hr />
       <ClassComponent name={name} /> */}
